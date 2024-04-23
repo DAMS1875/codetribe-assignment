@@ -32,8 +32,84 @@ input[type=submit]:hover {
 
 .container {
   border-radius: 5px;
-  background-color: #c40505;
+  
   padding: 20px;
+}
+
+input {
+
+height: 35px;
+padding: 7px;
+}
+
+button {
+height: 35px;
+
+background-color: skyblue;
+border: none;
+border-radius: 5px;
+color: #333;
+}
+
+button:hover {
+background: #333;
+color: skyblue;
+}
+
+.formbutton {
+width: 187px;
+}
+#myForm{
+width: 90%;
+margin: 1rem auto;
+}
+
+.formDetails{
+
+}
+
+label{
+display: block;
+font-size: 1rem;
+font-weight: 600;
+
+}
+
+input{
+width: 100%;
+padding: .6rem 0;
+outline: none;
+font-size: 1rem;
+}
+
+input:focus{
+outline: 1px solid #064247;
+}
+button{
+
+background-color: #053135;
+color: #fff;
+font-weight: 600;
+border: none;
+padding: .8rem 0;
+width: 100%;
+}
+.errorMessage{
+margin-top: .3rem;
+font-size: .9rem;
+font-weight: 600;
+font-family: monospace;
+}
+.formDetails.success input {
+border-color: #09c372;
+outline: none;
+}
+
+.formDetails.error input {
+border-color: #f2070e;
+}
+.formDetails.error textarea {
+border-color: #f2070e;
 }
 </style>
 </head>
@@ -42,25 +118,32 @@ input[type=submit]:hover {
 <h3>Contact Form</h3>
 
 <div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  <form  action="https://formspree.io/f/mbjnqpbk" method="POST" id="myForm">
+    <h2>Info</h2>
+    <div class="formDetails">
+      <label for="name">Name:</label><br/>
+      <input type="text" id="name" name="name">
+      <div class="errorMessage"></div>
+  </div>
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+     <div class="formDetails">
+        <label for="email">Email:</label><br/>
+        <input type="email" id="email" name="email">
+        <div class="errorMessage"></div>
+    </div>
 
-    <label for="email">email</label>
-    <input type="text" id="email" name="Email Address" placeholder="example@gmail.com..">
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
+    <div class="formDetails">
+      <label for="message">Message:</label><br/>
+      <textarea type="text" id="message" name="message"></textarea>
+      <div class="errorMessage"></div>
+  </div>
+    <!-- your other form fields go here -->
+    <button class="formbutton" type="submit">Send</button>
   </form>
   <div class="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.848734770475!2d24.72672107623744!3d-28.694171175631123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9b054c2afe7387%3A0x316060c970bf4cb8!2s22%2020th%20St%2C%20Homevale%2C%20Kimberley%2C%208301!5e0!3m2!1sen!2sza!4v1712651476344!5m2!1sen!2sza" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 </div>
-
+<script src="./contact.js"></script>
 </body>
 </html>
